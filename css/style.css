@@ -1,0 +1,348 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0a0a0f;
+    color: #f0eeff;
+    min-height: 100vh;
+}
+
+
+
+.header,
+.navbar {
+    background: #111118;
+    padding: 0 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #483594, #2511b8);
+}
+
+.header-logo svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+}
+
+.header-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #f0eeff;
+}
+
+.header-title span {
+    color: #7c5cfc;
+}
+
+.navbar {
+    display: flex;
+    gap: 2px;
+}
+
+.navbar a {
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #8888aa;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #f0eeff;
+    border-bottom-color: #7c5cfc;
+}
+
+.navbar a svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+}
+
+.page-narrow {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 24px 60px;
+}
+
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 28px;
+    font-size: 13px;
+    color: #8888aa;
+}
+
+.breadcrumb a {
+    color: #8888aa;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: #f0eeff;
+}
+
+.breadcrumb span {
+    color: #f0eeff;
+}
+
+.breadcrumb-sep {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #8888aa;
+}
+
+
+
+.form-card {
+    background: #16161f;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.form-header {
+    padding: 28px 32px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.form-header-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(124, 92, 252, 0.15);
+    border: 1px solid rgba(124, 92, 252, 0.25);
+}
+
+.form-header-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #a98bfc;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.form-header-text h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f0eeff;
+}
+
+.form-header-text p {
+    margin-top: 2px;
+    font-size: 13px;
+    color: #8888aa;
+}
+
+.form-body {
+    padding: 28px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #c0c0d8;
+}
+
+.field label svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: #7c5cfc;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+.field input,
+.field textarea,
+.field select {
+    width: 100%;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-family: 'DM Sans', sans-serif;
+    color: #f0eeff;
+    background: #0e0e16;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+    color: #555570;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+    border-color: #7c5cfc;
+    box-shadow: 0 0 0 3px rgba(124, 92, 252, 0.12);
+}
+
+.field textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    padding-top: 4px;
+}
+.btn-simpan svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+.btn-simpan {
+    flex: 1;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background: #7c5cfc;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-simpan:hover {
+    background: #6a4de8;
+}
+
+.btn-batal {
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #8888aa;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+}
+
+.btn-batal:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f0eeff;
+}
+
+
+
+footer {
+    margin-top: 20px;
+    padding: 28px;
+    text-align: center;
+    font-size: 12px;
+    color: #8888aa;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+footer span {
+    color: #7c5cfc;
+}
+
+
+
+@media (max-width: 700px) {
+    .header,
+    .navbar {
+        padding: 0 16px;
+    }
+
+    .page,
+    .page-narrow {
+        padding: 24px 16px 40px;
+    }
+
+    .form-header {
+        padding: 20px;
+    }
+
+    .form-body {
+        padding: 20px 20px 24px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}
