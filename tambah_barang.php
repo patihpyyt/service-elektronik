@@ -4,57 +4,170 @@ include 'koneksi.php';
 $pelanggan = mysqli_query($koneksi, "SELECT * FROM pelanggan");
 
 if (isset($_POST['simpan'])) {
-    $id_pelanggan = $_POST['id_pelanggan'];
-    $nama_barang = $_POST['nama_barang'];
-    $merek = $_POST['merek'];
-    $jenis_barang = $_POST['jenis_barang'];
-    $keluhan = $_POST['keluhan'];
+    $id_pelanggan   = $_POST['id_pelanggan'];
+    $nama_barang    = $_POST['nama_barang'];
+    $merek          = $_POST['merek'];
+    $jenis_barang   = $_POST['jenis_barang'];
+    $keluhan        = $_POST['keluhan'];
     $status_service = $_POST['status_service'];
-    $tanggal_masuk = $_POST['tanggal_masuk'];
+    $tanggal_masuk  = $_POST['tanggal_masuk'];
 
-
-    mysqli_query($koneksi, "INSERT INTO barang_service(id_pelanggan, nama_barang,merek, jenis_barang, keluhan, tanggal_masuk, status_service)VALUES ('$id_pelanggan', '$nama_barang', '$merek','$jenis_barang', '$keluhan', '$tanggal_masuk', '$status_service')");
+    mysqli_query($koneksi, "
+        INSERT INTO barang_service 
+        (id_pelanggan, nama_barang, merek, jenis_barang, keluhan, tanggal_masuk, status_service)
+        VALUES 
+        ('$id_pelanggan', '$nama_barang', '$merek', '$jenis_barang', '$keluhan', '$tanggal_masuk', '$status_service')
+    ");
 
     header("Location: barang_service.php");
+    exit;
 }
 ?>
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Barang Service</title>
 
-<h2>Tambah barang service</h2>
+    <link rel="stylesheet" href="css/tambahbarang.css">
 
-<form method="POST">
-   Pelanggan: <br>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
 
-<select name="id_pelanggan">
-    <?php while($p = mysqli_fetch_assoc($pelanggan)) { ?>
-        <option value="<?= $p['id_pelanggan'] ?>">
-            <?= $p['nama'] ?>
-        </option>
-    <?php } ?>
-</select>
-<br><br>
+<div class="header">
+    <div class="header-logo" style="background: linear-gradient(135deg, #483594, #2511b8);">
+        <svg viewBox="0 0 24 24">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+        </svg>
+    </div>
 
-Nama Barang: <br>
-<input type="text" name="nama_barang"><br><br>
+    <div class="header-title">
+        Service<span>Elektronik</span>
+    </div>
+</div>
 
-    Jenis Barang: <br>
-    <input type="text" name="jenis_barang"><br><br>
+  <div class="navbar">
+        <a href="index.php" class="active">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+            Home
+        </a>
+        <a href="pelanggan.php">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+            Data Pelanggan
+        </a>
+        <a href="barang_service.php">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            Barang Service
+        </a>
+        <a href="proses_service.php">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 015 19.07M4.93 4.93A10 10 0 0119 19.07"/></svg>
+            Proses Service
+        </a>
+        <a href="cek_status.php">
+            <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Cek Status
+        </a>
+    </div>
 
-    Merek: <br>
-    <input type="text" name="merek"> <br><br>
+<div class="page-narrow">
 
-    Keluhan: <br>
-    <textarea name="keluhan"></textarea><br><br>
+    <div class="breadcrumb">
+        <a href="barang_service.php">Barang Service</a>
+        <div class="breadcrumb-sep"></div>
+        <span>Tambah Barang</span>
+    </div>
 
-    Tanggal Masuk: <br>
-    <input type="date" name="tanggal_masuk"><br><br>
-    Status Service: <br>
-<select name="status_service">
-    <option value="Menunggu">Menunggu</option>
-    <option value="Proses">Proses</option>
-    <option value="Selesai">Selesai</option>
-    <option value="Sudah Diambil">Sudah Diambil</option>
-</select><br><br>
-    <button type="submit" name="simpan">Simpan</button>
+    <div class="form-card">
 
-</form>
+        <div class="form-header">
+            <div class="form-header-text">
+                <h2>Tambah Barang Service</h2>
+                <p>Masukkan data barang yang akan diservice</p>
+            </div>
+        </div>
+
+        <form method="POST" class="form-body">
+
+            <div class="field">
+                <label>Pelanggan</label>
+                <select name="id_pelanggan" required>
+                    <?php while($p = mysqli_fetch_assoc($pelanggan)) { ?>
+                        <option value="<?= $p['id_pelanggan'] ?>">
+                            <?= $p['nama'] ?>
+                        </option>
+                    <?php } ?>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Nama Barang</label>
+                <input type="text" name="nama_barang" required>
+            </div>
+
+            <div class="field">
+                <label>Jenis Barang</label>
+                <input type="text" name="jenis_barang" required>
+            </div>
+
+            <div class="field">
+                <label>Merek</label>
+                <input type="text" name="merek" required>
+            </div>
+
+            <div class="field">
+                <label>Keluhan</label>
+                <textarea name="keluhan" required></textarea>
+            </div>
+
+            <div class="field">
+                <label>Tanggal Masuk</label>
+                <input type="date" name="tanggal_masuk" required>
+            </div>
+
+            <div class="field">
+                <label>Status Service</label>
+                <select name="status_service" required>
+                    <option value="Menunggu">Menunggu</option>
+                    <option value="Proses">Proses</option>
+                    <option value="Selesai">Selesai</option>
+                    <option value="Sudah Diambil">Sudah Diambil</option>
+                </select>
+            </div>
+
+            <div class="form-actions">
+                <a href="barang_service.php" class="btn-batal">
+                    Batal
+                </a>
+
+                <button type="submit" name="simpan" class="btn-simpan">
+                    Simpan Barang
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<footer>
+    &copy; <?= date('Y'); ?>
+    <span>Sistem Informasi Service Elektronik</span>
+    — All rights reserved.
+</footer>
+
+<script>
+const currentPage = window.location.pathname.split("/").pop();
+const navLinks = document.querySelectorAll(".navbar a");
+
+navLinks.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+    }
+});
+</script>
+
+</body>
+</html>
