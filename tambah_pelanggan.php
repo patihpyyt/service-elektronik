@@ -6,8 +6,11 @@ if (isset($_POST['simpan'])) {
     $no_hp  = $_POST['no_hp'];
     $alamat = $_POST['alamat'];
     mysqli_query($koneksi, "INSERT INTO pelanggan (nama, no_hp, alamat) VALUES ('$nama', '$no_hp', '$alamat')");
-    header("Location: pelanggan.php");
-    exit;
+  echo "<script>
+alert('berhasil ditambahkan');
+window.location='pelanggan.php';
+</script>";
+exit;
 }
 ?>
 <!DOCTYPE html>
