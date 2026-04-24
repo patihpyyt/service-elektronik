@@ -164,9 +164,7 @@ body {
     gap: 20px;
 }
 
-/* =========================
-   FORM FIELD
-========================= */
+
 .field {
     display: flex;
     flex-direction: column;
@@ -208,9 +206,7 @@ body {
     resize: vertical;
 }
 
-/* =========================
-   BUTTON
-========================= */
+
 .form-actions {
     display: flex;
     gap: 12px;
@@ -243,9 +239,7 @@ body {
     background: #6a4de8;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 @media (max-width: 768px) {
     .page-narrow {
         padding: 24px 16px 40px;
