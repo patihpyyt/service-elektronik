@@ -100,6 +100,7 @@ body {
     border-bottom-color: #7c5cfc;
 }
 
+
 .page-narrow {
     max-width: 700px;
     margin: 0 auto;
@@ -117,9 +118,6 @@ body {
     color: #f0eeff;
 }
 
-/* =========================
-   FORM CARD
-========================= */
 .form-card {
     background: #16161f;
     border: 1px solid rgba(255,255,255,0.07);
@@ -145,16 +143,6 @@ body {
     background: rgba(124,92,252,0.15);
     border: 1px solid rgba(124,92,252,0.25);
     flex-shrink: 0;
-}
-
-.form-header-icon svg {
-    width: 20px;
-    height: 20px;
-    stroke: #7c5cfc;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
 }
 
 .form-header-text h2 {
@@ -186,27 +174,13 @@ body {
 }
 
 .field label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
     font-size: 13px;
     font-weight: 500;
     color: #c0c0d8;
 }
 
-.field label svg {
-    width: 16px;
-    height: 16px;
-    stroke: #7c5cfc;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
 .field input,
-.field textarea,
-.field select {
+.field textarea {
     width: 100%;
     padding: 12px 14px;
     font-size: 14px;
@@ -224,8 +198,7 @@ body {
 }
 
 .field input:focus,
-.field textarea:focus,
-.field select:focus {
+.field textarea:focus {
     border-color: #7c5cfc;
     box-shadow: 0 0 0 3px rgba(124,92,252,0.12);
 }
@@ -244,21 +217,14 @@ body {
     margin-top: 8px;
 }
 
-.btn-batal,
-.btn-simpan {
-    text-decoration: none;
-    font-family: 'DM Sans', sans-serif;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-}
-
 .btn-batal {
     padding: 12px 22px;
     color: #8888aa;
     border: 1px solid rgba(255,255,255,0.10);
     background: rgba(255,255,255,0.03);
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
 }
 
 .btn-simpan {
@@ -267,6 +233,10 @@ body {
     border: none;
     color: #fff;
     background: #7c5cfc;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .btn-simpan:hover {
@@ -274,28 +244,9 @@ body {
 }
 
 /* =========================
-   FOOTER
+   RESPONSIVE
 ========================= */
-footer {
-    margin-top: 20px;
-    padding: 28px;
-    text-align: center;
-    font-size: 12px;
-    color: #8888aa;
-    border-top: 1px solid rgba(255,255,255,0.07);
-}
-
-footer span {
-    color: #7c5cfc;
-}
-
-
 @media (max-width: 768px) {
-    .header,
-    .navbar {
-        padding: 0 16px;
-    }
-
     .page-narrow {
         padding: 24px 16px 40px;
     }
