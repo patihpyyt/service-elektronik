@@ -104,7 +104,7 @@ if (isset($_POST['cari'])) {
                     <th>Nama</th>
                     <th>No HP</th>
                     <th>Nama Barang</th>
-                    <th>Keluhan</th>
+                    <th>Kerusakan</th>
                     <th>Status</th>
                     <th>Biaya</th>
                     <th>Tanggal Selesai</th>
@@ -118,7 +118,7 @@ if (isset($_POST['cari'])) {
                             <td><?= $row['nama']; ?></td>
                             <td class="td-muted"><?= $row['no_hp']; ?></td>
                             <td><?= $row['nama_barang']; ?></td>
-                            <td class="td-muted"><?= $row['keluhan']; ?></td>
+                            <td><?= $row['kerusakan'] ? $row['kerusakan'] : '-'; ?></td>
                             <td><?= $row['status_service']; ?></td>
                             <td class="td-muted">
                                 Rp <?= $row['biaya'] ? number_format($row['biaya']) : '-'; ?>
